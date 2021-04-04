@@ -1,0 +1,25 @@
+{
+	"kind": "Pod",
+	"apiVersion": "v1",
+	"metadata": {
+		"name": "sample-application",
+		"labels": {
+			"app": "webapp"
+    		}
+	},
+	"spec": {
+		"containers": [
+			{
+				"name": "count-service",
+				"image": "count-service:latest",
+				"imagePullPolicy": "IfNotPresent",
+				"ports": [
+					{
+						"containerPort": 8082
+					}
+				],
+				"command": ["./main"]
+			}
+		]
+	}
+}
